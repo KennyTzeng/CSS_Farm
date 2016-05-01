@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HW7 - CSS3練習</title>
+    <style>
+        body{
+            background-image: url("images/GrassBlueSkyBackground.jpg");
+            background-repeat: no-repeat;
+        }
+        img#cow{
+            position: absolute;
+            top: 500px;
+        }
+        img#rail{
+            position: absolute;
+            top: 500px;
+        }
+        img#tower{
+            position: absolute;
+            top: 150px;
+            left: 650px;
+        }
+        img#windmill{
+            position: absolute;
+            top: 75px;
+            left: 675px;
+            
+        }
+        img#bird{
+            position: absolute;
+            top: 300px;
+            left: 0px;
+        }
+        div{
+            width: 125px;
+            height: 125px;
+            background-color: yellow;
+            border-radius: 50%;
+            margin: 75px 0px 0px 75px;
+            box-shadow: 10px 10px 40px yellow;
+            transition: width 2s, height 2s;
+        }
+        div:hover{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        var degree=0;
+        var posX=0;
+        function changeAngle(){
+            document.getElementById("windmill").style.transform="rotate("+degree+"deg)";
+            degree += 10;
+            if(degree == 360){
+                degree = 0;
+            }
+            document.getElementById("bird").style.left = posX +"px";
+            posX += 30;
+            if(posX == 1140){
+                posX = 0;
+            }
+        }
+    </script>
+</head>
+<body onload="setInterval('changeAngle()',75)">
+    
+    <div></div>
+    <img src="images/cow.png" id="cow">
+    <img src="images/3FT3Rail.png" id="rail" width="550px" height="380px">
+    <img src="images/bird.png" id="bird" width="100px">
+    <img src="images/lookout_tower.png" id="tower" height="500px">
+    <img src="images/Windmill-clip.png" id="windmill" width="450px" height="450px">
+
+</body>
+</html>
